@@ -8,9 +8,9 @@
 <div class="footer">
     Статистика по квест игре:
     <br>
-    Имя: ${user.getName()}
+    Имя: ${username}
     <br>
-    Количество сыгранных игр: ${user.getCountGame()}
+    Количество сыгранных игр: ${counter}
 <p><%= new java.util.Date().toString()%></p>
 </div>
 </body>

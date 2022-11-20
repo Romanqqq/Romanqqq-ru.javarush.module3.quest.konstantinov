@@ -1,5 +1,8 @@
 package ru.javarush.entities;
 
+import lombok.Getter;
+
+@Getter
 public class User {
     private String name;
     private int countGame;
@@ -9,12 +12,4 @@ public class User {
         this.countGame= countGame;
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public int getCountGame() {
-        return countGame;
-    }
 }

@@ -17,27 +17,32 @@ import java.util.List;
 public class ServletQuestStart extends HttpServlet {
     private Repository repository;
 
-
     @Override
-    public void init() throws ServletException {
-        repository= new Repository();
-
+    public void init() {
+        repository = new Repository();
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        String username = req.getParameter("username");
+        session.setAttribute("username", username);
+
         String id = req.getParameter("id");
-        if(id!=null){
+        if (id != null) {
             int i = Integer.parseInt(id);
             String nextQuestion = repository.getNextQuestion(i);
-            List<Answer> answerList=repository.getAnswerByQuestion(i);
-            req.setAttribute("question",nextQuestion);
-            req.setAttribute("answers",answerList);
-            req.getRequestDispatcher("quest.jsp").forward(req,resp);
+            List<Answer> answerList = repository.getAnswerByQuestion(i);
+            req.setAttribute("question", nextQuestion);
+            req.setAttribute("answers", answerList);
+            req.getRequestDispatcher("quest.jsp").forward(req, resp);
         }
-
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
     }
+
+
+
 }
+

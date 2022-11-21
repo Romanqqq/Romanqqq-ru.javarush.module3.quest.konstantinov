@@ -14,12 +14,10 @@
 Твоя воля сломлена! Ты навсегда останешься в лабиринте!
 <br>
 <form method="get">
-    <input type="text" name="username" value="${username}" hidden>
-    <input type="text" name="counter" value="${counter}" hidden>
 </form>
 <form action="index.jsp">
     <input type="submit" value="Вернуться в лабиринт!">
-
+    <input type="text" name="username" value="${username}" hidden>
 </form>
 </body>
 </html>

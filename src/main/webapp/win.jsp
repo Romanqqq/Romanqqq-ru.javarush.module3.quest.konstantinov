@@ -18,16 +18,16 @@
     <input type="text" name="username" value="${username}" hidden>
     <input type="text" name="counter" value="${counter+1}" hidden>
 </form>
-<%--<form action="index.jsp">--%>
-<%--    <input type="submit" value="Вернуться в лабиринт!">--%>
-<%--</form>--%>
+<form action="index.jsp">
+    <input type="submit" value="Вернуться в лабиринт!">
+</form>
 <button onclick="restart()">Вернуться в лабиринт!</button>
 
 <script>
     function restart() {
         $.ajax({
             url:'/restart',
-            type:'POST',
+            type:'GET',
             contentType:'application/json;charset=UTF-8',
             async: false,
             success:function (){

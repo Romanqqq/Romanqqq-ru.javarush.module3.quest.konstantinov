@@ -35,11 +35,13 @@ public class ServletQuestStart extends HttpServlet {
             req.setAttribute("question", nextQuestion);
             req.setAttribute("answers", answerList);
             req.getRequestDispatcher("quest.jsp").forward(req, resp);
+            session.setAttribute("username",username);
         }
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+
     }
 
 

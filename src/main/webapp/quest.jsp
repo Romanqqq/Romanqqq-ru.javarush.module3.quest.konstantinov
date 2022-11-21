@@ -12,25 +12,24 @@
 <h2>${question}</h2>
 <br>
 <form method="get">
+
+
     <c:forEach items="${answers}" var="answer">
     <div class="form-field">
-        <label>
-            <p><input type="radio" name="id"
-                      value="${answer.getNextQuestion()}">${answer.getText()}</p>
-        </label>
-        <%
-        %>
-        <c:if test="${answer.winlose}">
-            <jsp:forward page="lose.jsp"></jsp:forward>
+        <p><input type="radio" name="id"
+                  value="${answer.getNextQuestion()}">${answer.getText()}</p>
+
+        <c:if test="${answer.winlose!=true}">
+        <form action="lose.jsp"></form>
         </c:if>
         </c:forEach>
+
         <p>
             <button type="submit" class="btn btn-danger">Выбрать</button>
         </p>
-
+        <input type="hidden" name="username" value="${username}" hidden>
 
 </form>
-
 </body>
 </html>
 <%@include file="views/footer.jsp" %>

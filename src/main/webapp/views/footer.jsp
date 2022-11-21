@@ -6,12 +6,11 @@
 </head>
 <body>
 <div class="footer">
-    Статистика по квест игре:
+    Текущий пользователь:
     <br>
-    Имя: ${username}
+    ${username}
     <br>
-    Количество сыгранных игр: ${counter}
-<p><%= new java.util.Date().toString()%></p>
+    <p><%= new java.util.Date().toString()%></p>
 </div>
 </body>
 </html>

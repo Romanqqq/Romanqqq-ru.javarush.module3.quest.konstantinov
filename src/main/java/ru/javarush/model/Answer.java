@@ -12,6 +12,6 @@ public class Answer {
 
         this.text = text;
         this.nextQuestion = nextQuestion;
-        this.winlose=winLose;
+
     }
 }

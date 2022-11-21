@@ -15,12 +15,15 @@
 
 
     <c:forEach items="${answers}" var="answer">
+
+
     <div class="form-field">
         <p><input type="radio" name="id"
                   value="${answer.getNextQuestion()}">${answer.getText()}</p>
 
-        <c:if test="${answer.winlose!=true}">
-        <form action="lose.jsp"></form>
+        <c:if test="${!answer.winlose}">
+        <input type="hidden" name="winlose" value="${winlose}">
+        <input type="hidden" name="nextQuestion" value="result" ${answer.getText()}>
         </c:if>
         </c:forEach>
 
